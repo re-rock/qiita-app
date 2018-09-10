@@ -5,11 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.varialworks</groupId>
-	<artifactId>todo</artifactId>
+	<artifactId>qiita-app</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
-	<name>todo</name>
-	<description>Spring Boot Todo Apps</description>
+	<name>qiita-app</name>
+	<description>Spring Boot Qiitaß Apps</description>
 
 <parent>
         <groupId>org.springframework.boot</groupId>
