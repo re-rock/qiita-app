@@ -3,8 +3,8 @@ package com.example.demo.repository;
 import java.net.URI;
 import java.util.List;
 
-import com.example.demo.config.QiitaParam;
 import com.example.demo.domain.QiitaItem;
+import com.example.demo.param.QiitaParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
