@@ -3,6 +3,7 @@ package com.example.demo.repository;
 import java.net.URI;
 import java.util.List;
 
+import com.example.demo.config.QiitaParam;
 import com.example.demo.domain.QiitaItem;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,14 +36,14 @@ public class RestComponent {
         log.info("ril=[{}]", uri.toString());
         RequestEntity<Void> requestEntity = RequestEntity.get(uri).build();
         ResponseEntity<List<QiitaItem>> responseEntity = 
-            restTemplate.exchange(requestEntity, new ParameterizedTypeReference(List<QiitaItem>() {
+            restTemplate.exchange(requestEntity, new ParameterizedTypeReference<List<QiitaItem>>() {
             });
         return responseEntity.getBody();
     }
 
     private URI convertToUri(QiitaParam qiitaParam) {
         String url = qiitaParam.getUrl();
-        Integer limit = qiitaParam.getUrl();
+        Integer limit = qiitaParam.getLimit();
         UriComponentsBuilder builder = 
             UriComponentsBuilder.fromUriString(url).queryParam("page", 1).queryParam("per_page", limit);
         return builder.build().toUri();

@@ -10,6 +10,6 @@ public class QiitaParam {
 
     private String url;
 
-    private String limit;
+    private Integer limit;
     
 }

@@ -2,11 +2,12 @@ package com.example.demo.service;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.transaction.annotation.Transactional;
+import com.example.demo.domain.QiitaItem;
+import com.example.demo.repository.QiitaRepository;
+import com.example.demo.repository.RestComponent;
 
 @Service
 public class QiitaService {
@@ -22,7 +23,7 @@ public class QiitaService {
     }
 
     @Transactional(readOnly = false)
-    public void crawItems() {
+    public void crawlItems() {
         List<QiitaItem> items = restComponent.getItems();
         qiiitaRepository.saveAll(items);
     }

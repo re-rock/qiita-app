@@ -1,9 +1,14 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.example.demo.domain.QiitaItem;
+import com.example.demo.service.QiitaService;
 
 @Controller
 public class QiitaWebController {
@@ -15,7 +20,7 @@ public class QiitaWebController {
     public ModelAndView showAllItemsPage() {
         ModelAndView modelAndView = new ModelAndView("Items");
 
-        List<QiiitaItems> items = qiitaService.findAll();
+        List<QiitaItem> items = qiitaService.findAll();
         modelAndView.addObject("items", items);
         return modelAndView;
     }
