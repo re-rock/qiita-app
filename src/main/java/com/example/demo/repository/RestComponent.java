@@ -12,10 +12,8 @@ import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -33,7 +31,7 @@ public class RestComponent {
 
     public List<QiitaItem> getItems() {
         URI uri = convertToUri(qiitaParam);
-        log.info("ril=[{}]", uri.toString());
+        log.info("url=[{}]", uri.toString());
         RequestEntity<Void> requestEntity = RequestEntity.get(uri).build();
         ResponseEntity<List<QiitaItem>> responseEntity = 
             restTemplate.exchange(requestEntity, new ParameterizedTypeReference<List<QiitaItem>>() {

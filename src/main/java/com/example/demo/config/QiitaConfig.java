@@ -7,9 +7,10 @@ import com.example.demo.param.QiitaParam;
 
 @Configuration
 public class QiitaConfig {
-    
-    @Bean
-    public QiitaParam qiitaParam() {
-        return new QiitaParam();
-    }
+
+	@Bean
+	public QiitaParam qiitaParam() {
+		return new QiitaParam();
+	}
+
 }
