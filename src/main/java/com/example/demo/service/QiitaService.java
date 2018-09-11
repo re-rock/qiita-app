@@ -33,5 +33,4 @@ public class QiitaService {
         return qiiitaRepository.findAll();
     }
 
-
 }
