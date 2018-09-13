@@ -18,7 +18,7 @@ public class QiitaWebController {
 
     @GetMapping(value = "/items")
     public ModelAndView showAllItemsPage() {
-        ModelAndView modelAndView = new ModelAndView("Items");
+        ModelAndView modelAndView = new ModelAndView("items");
 
         List<QiitaItem> items = qiitaService.findAll();
         modelAndView.addObject("items", items);
